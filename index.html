@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Carousel with Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Flickity CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>UT LIVE LENS</h1>
+      <p id="countdown"></p>
+      <div class="carousel-wrapper">
+        <div class="carousel">
+          <!-- Existing images -->
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/62.jpg"
+              alt="Street Image 1"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/62.jpg"
+              download="street-image-1.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/61.jpg"
+              alt="Street Image 2"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/61.jpg"
+              download="street-image-2.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/68.jpg"
+              alt="Street Image 3"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/68.jpg"
+              download="street-image-3.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <!-- Additional images -->
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/784.jpg"
+              alt="Street Image 4"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/784.jpg"
+              download="street-image-4.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/785.jpg"
+              alt="Street Image 5"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/785.jpg"
+              download="street-image-5.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/69.jpg"
+              alt="Street Image 6"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/69.jpg"
+              download="street-image-6.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/70.jpg"
+              alt="Street Image 7"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/70.jpg"
+              download="street-image-7.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/816.jpg"
+              alt="Street Image 8"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/816.jpg"
+              download="street-image-8.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/757.jpg"
+              alt="Street Image 9"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/757.jpg"
+              download="street-image-9.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/409.jpg"
+              alt="Street Image 10"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/409.jpg"
+              download="street-image-10.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/408.jpg"
+              alt="Street Image 11"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/408.jpg"
+              download="street-image-11.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/407.jpg"
+              alt="Street Image 12"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/407.jpg"
+              download="street-image-12.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/406.jpg"
+              alt="Street Image 13"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/406.jpg"
+              download="street-image-13.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/74.jpg"
+              alt="Street Image 14"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/74.jpg"
+              download="street-image-14.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/405.jpg"
+              alt="Street Image 15"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/405.jpg"
+              download="street-image-15.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/78.jpg"
+              alt="Street Image 16"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/78.jpg"
+              download="street-image-16.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/1286.jpg"
+              alt="Street Image 17"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/1286.jpg"
+              download="street-image-17.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/244.jpg"
+              alt="Street Image 18"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/244.jpg"
+              download="street-image-18.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/79.jpg"
+              alt="Street Image 19"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/79.jpg"
+              download="street-image-19.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/67.jpg"
+              alt="Street Image 20"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/67.jpg"
+              download="street-image-20.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/66.jpg"
+              alt="Street Image 21"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/66.jpg"
+              download="street-image-21.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/65.jpg"
+              alt="Street Image 22"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/65.jpg"
+              download="street-image-22.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/811.jpg"
+              alt="Street Image 23"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/811.jpg"
+              download="street-image-23.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/64.jpg"
+              alt="Street Image 24"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/64.jpg"
+              download="street-image-24.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/702.jpg"
+              alt="Street Image 25"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/702.jpg"
+              download="street-image-25.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+          <div class="carousel-cell">
+            <img
+              src="https://cctv.austinmobility.io/image/63.jpg"
+              alt="Street Image 26"
+            />
+            <a
+              href="https://cctv.austinmobility.io/image/63.jpg"
+              download="street-image-26.jpg"
+              class="download-button"
+              >TAKE PHOTO</a
+            >
+          </div>
+        </div>
+      </div>
+      <p class="description">
+        In August 2024, Brooklyn resident Morry Kolman developed
+        www.trafficcamphotobooth.com, a website that allows visitors to (mis)use
+        traffic surveillance cameras to take personal photographs. The website
+        uses the live feed from the NYC DOT (updated every few seconds) to
+        capture images from the cameras. This enables users, as the website
+        explains, to pose in the camera frame and "take selfies with
+        surveillance." In response to this website, I've developed a similar
+        tool that utilizes traffic cameras in Austin, Texas, for play and not
+        just surveillance. With 26 cameras covering the perimeter of UT Austin's
+        campus, "UT Live Lens" offers users a similar chance to misuse
+        surveillance technologies for fun!!!
+        <br /><br />
+        <strong
+          >The photos will update around every 5-6 minutes. The entire page must
+          be reloaded to view the new captured image.</strong
+        >
+        <br /><br />
+        Credit to Morry Kolman for the idea; KUT News for the data; and City of
+        Austin Transportation Public Works for the use of their silly cameras.
+        Please contact Trent Wintermeier (trentwintermeier@utexas.edu) with any
+        questions or concerns. And please don't use this on the road or injure
+        yourself taking a street selfie. Be safe out there!
+      </p>
+    </div>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
