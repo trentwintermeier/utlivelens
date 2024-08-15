@@ -109,16 +109,13 @@ body {
 /* Style for the new paragraph */
 .description {
     margin-top: 20px; /* Space above the paragraph */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px; /* Add padding for better spacing */
     font-size: 1.2em; /* Font size for better readability */
     line-height: 1.6; /* Line height for readability */
     color: #333; /* Dark text color for contrast */
-    text-align: justify
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 600px) {
-    .description {
-        font-size: 1em; /* Adjust font size for smaller screens */
-        padding: 0 5px; /* Reduce padding for smaller screens */
-    }
+    text-align: justify;
+    max-width: 100%; /* Ensure the paragraph does not exceed the container's width */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
