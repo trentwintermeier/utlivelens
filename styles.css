@@ -109,8 +109,6 @@ body {
 /* Style for the new paragraph */
 .description {
     margin-top: 20px; /* Space above the paragraph */
-    margin-left: -100px;
-    margin-right: -100px;
     font-size: 1.2em; /* Font size for better readability */
     line-height: 1.6; /* Line height for readability */
     color: #333; /* Dark text color for contrast */
