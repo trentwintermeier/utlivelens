@@ -1,64 +1,50 @@
-// Initialize Flickity
-var elem = document.querySelector('.carousel');
-var flkty = new Flickity(elem, {
-    // options
-    cellAlign: 'left',
-    contain: true,
-    wrapAround: true,
-    autoPlay: false
-});
+// Set the starting time (e.g., 09:39:55) as a string
+const startTime = "09:39:55";
+const intervalMinutes = 5; // 5-minute intervals
 
-// Function to calculate the remaining time until the next photo update
-function updateCountdown() {
-    const photoInterval = 5 * 60 * 1000; // 5 minutes in milliseconds
-    const lastPhotoTime = new Date();
-    lastPhotoTime.setHours(13);
-    lastPhotoTime.setMinutes(26);
-    lastPhotoTime.setSeconds(15);
-
+function getNextIntervalTime() {
     const now = new Date();
-    let nextPhotoTime = new Date(lastPhotoTime.getTime() + photoInterval);
+    const [startHours, startMinutes, startSeconds] = startTime.split(':').map(Number);
 
-    if (now > nextPhotoTime) {
-        // If current time is past the next photo time, adjust next photo time
-        const missedIntervals = Math.floor((now - nextPhotoTime) / photoInterval);
-        nextPhotoTime = new Date(nextPhotoTime.getTime() + (missedIntervals + 1) * photoInterval);
+    // Create a Date object for the start time today
+    let intervalDate = new Date(now);
+    intervalDate.setHours(startHours, startMinutes, startSeconds, 0);
+
+    // Calculate how many intervals have passed since the start time
+    const timeSinceStart = now - intervalDate;
+    const intervalsPassed = Math.floor(timeSinceStart / (intervalMinutes * 60 * 1000));
+    
+    // Set the next interval
+    intervalDate.setMinutes(startMinutes + (intervalsPassed + 1) * intervalMinutes);
+
+    // If the interval is in the past, move it to the next day
+    if (now >= intervalDate) {
+        intervalDate.setDate(intervalDate.getDate() + 1);
+        intervalDate.setHours(startHours, startMinutes, startSeconds, 0);
     }
 
-    const timeDifference = nextPhotoTime - now;
+    return intervalDate;
+}
 
-    const minutes = Math.floor((timeDifference % (1000 * 3600)) / (1000 * 60));
-    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+function updateCountdown() {
+    const targetDate = getNextIntervalTime();
+    const now = new Date();
+    const timeDifference = targetDate - now;
 
-    document.getElementById('countdown').textContent = `NEXT PHOTO UPDATE IN ${minutes}m ${seconds}s`;
-
-    // Reload the page when the countdown reaches zero
     if (timeDifference <= 0) {
-        location.reload();
+        setTimeout(updateCountdown, 1000);
+        return;
     }
+
+    const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+    const seconds = Math.floor((timeDifference / 1000) % 60);
+
+    // Display the countdown in the format "mm:ss"
+    document.getElementById('countdown').innerHTML = `${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+
+    // Set up the countdown to update every second
+    setTimeout(updateCountdown, 1000);
 }
 
-// Update the countdown every second
-setInterval(updateCountdown, 1000);
-
-// Initial countdown update
+// Initialize the countdown
 updateCountdown();
-
-// Function to close the overlay
-function closeOverlay() {
-    document.getElementById('welcomeOverlay').style.display = 'none';
-}
-
-// Ensure the overlay is closed if the user has already seen it (using localStorage)
-window.onload = function() {
-    if (!localStorage.getItem('overlaySeen')) {
-        document.getElementById('welcomeOverlay').style.display = 'flex';
-    } else {
-        document.getElementById('welcomeOverlay').style.display = 'none';
-    }
-};
-
-// Set the overlaySeen flag when the overlay is closed
-document.querySelector('.overlay button').addEventListener('click', function() {
-    localStorage.setItem('overlaySeen', 'true');
-});
